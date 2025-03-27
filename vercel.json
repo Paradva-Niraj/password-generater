@@ -1,17 +1,11 @@
 {
+    "routes": [
+      { "src": "/", "dest": "/" },
+      { "src": "/password-generater", "dest": "/" },
+      { "src": "/password-generater/(.*)", "dest": "/" }
+    ],
     "rewrites": [
-      { "source": "/password-generater/**", "destination": "/index.html" }
-    ],
-    "redirects": [
-      { "source": "/password-generater", "destination": "/", "statusCode": 301 }
-    ],
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-        ]
-      }
+      { "source": "/password-generater", "destination": "/" },
+      { "source": "/password-generater/(.*)", "destination": "/" }
     ]
   }
-  
