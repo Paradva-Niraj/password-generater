@@ -1,21 +1,17 @@
 {
     "rewrites": [
-      { "source": "/password-generater/*", "destination": "/index.html" }
-    ],
-    "routes": [
-      { "src": "/(.*)", "dest": "/index.html" }
-    ],
-    "builds": [
-      {
-        "src": "package.json",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "dist"
-        }
-      }
+      { "source": "/password-generater/**", "destination": "/index.html" }
     ],
     "redirects": [
       { "source": "/password-generater", "destination": "/", "statusCode": 301 }
+    ],
+    "headers": [
+      {
+        "source": "/(.*)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        ]
+      }
     ]
   }
   
