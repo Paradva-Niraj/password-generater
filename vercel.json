@@ -1,0 +1,21 @@
+{
+    "rewrites": [
+      { "source": "/password-generater/*", "destination": "/index.html" }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "/index.html" }
+    ],
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "dist"
+        }
+      }
+    ],
+    "redirects": [
+      { "source": "/password-generater", "destination": "/", "statusCode": 301 }
+    ]
+  }
+  
