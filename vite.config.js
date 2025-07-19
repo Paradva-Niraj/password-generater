@@ -4,6 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [tailwindcss(),],
-  base:"/password-generater/"
-})
+  plugins: [react()],  // Correct plugins
+  base: './',  // Use relative paths for Netlify
+});
